@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<link type="text/css" rel="stylesheet" href="lib/css/maze.css">
+<head>
+  <meta charset="UTF-8">
+  <title>3D MAZE</title>
+  <script src="lib/scripts/jquery.js"></script>
+</head>
+<body>
+<h1> 3D MAZE </h1>
+<table>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td>
+            <p>
+              Find your way through the maze! Use the arrow keys to move and click and drag the screen to look around. Be careful!
+              There may be evil spirits wandering around...
+            </p>
+          </td>
+        </tr>
+        <!--<tr>-->
+        <!--<td>-->
+        <!--<table>-->
+        <!--<tr>-->
+        <!--<td colspan="3">-->
+        <!--<button id="up">-->
+        <!--FORWARD-->
+        <!--</button>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td>-->
+        <!--<button id="left">-->
+        <!--LEFT-->
+        <!--</button>-->
+        <!--</td>-->
+        <!--<td>-->
+        <!--<button id="down">-->
+        <!--BACK-->
+        <!--</button>-->
+        <!--</td>-->
+        <!--<td>-->
+        <!--<button id="right">-->
+        <!--RIGHT-->
+        <!--</button>-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--</table>-->
+        <!--</td>-->
+        <!--</tr>-->
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <canvas id="main_screen" class="canvas3D"></canvas>
+    </td>
+  </tr>
+
+</table>
+
+<!-- Load the JavaScript libraries and data files for the WebGL rendering -->
+<script src="lib/scripts/learn_webgl_02.js"></script>
+<script src="lib/scripts/learn_webgl_console_messages.js"></script>
+<script src="lib/scripts/learn_webgl_point4.js"></script>
+<script src="lib/scripts/learn_webgl_vector3.js"></script>
+<script src="lib/scripts/learn_webgl_matrix.js"></script>
+<script src="lib/scripts/learn_webgl_obj_to_arrays.js"></script>
+<script src="lib/scripts/learn_webgl_model_render.js"></script>
+<script src="lib/scripts/map.js"></script>
+<script src="lib/scripts/events.js"></script>
+
+<script src="lib/scripts/render.js"></script>
+<script>
+  var shaders = ["lib/shaders/shader.vert", "lib/shaders/shader.frag"];
+  var models = ["lib/models/three_walls.obj", "lib/models/background.obj", "lib/models/end.obj", "lib/models/ghost.obj"];
+  var controls = ["up", "down", "left", "right"];
+  var music = [""]
+
+
+  var my_program = new Learn_webgl("main_screen", "MazeRender", models, shaders, controls);
+
+</script>
+
+</body>
+</html>
